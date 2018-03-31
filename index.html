@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/bootstrap-theme.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-bordered" id="listBox">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>status</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div>
+                <ul class="pagination pull-left" id="pager"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="public/js/jquery.min.js"></script>
+<script src="public/js/bootstrap.js"></script>
+<script src="public/js/jquery.pagination.js"></script>
+<script>
+    $(function(){
+        var dataList = [];
+        for(var i = 1; i < 94; i++){
+            dataList.push({
+                id: 'ac' + i,
+                name: 'name' + i,
+                status: 'stoped'
+            });
+        }
+        var pagination = new Pagination('#listBox', {
+            data: dataList,
+            perPageNum: 10
+        });
+        pagination.init();
+    });
+</script>
+</body>
+</html>
